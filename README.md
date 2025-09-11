@@ -1,1 +1,1 @@
-# lab_bot
+C tasks bot in Polyteh
