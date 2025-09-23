@@ -4,8 +4,10 @@
 #include <windows.h>
 #include <sys/types.h>
 #include <locale.h>
-#define len_of_str 25
+#define len_of_str 26
 #define _GNU_SOURCE
+
+// example.txt
 
 char* append_char_to_string(char* s, char c) {
 
@@ -97,12 +99,12 @@ char* do_the_deal(char* s) {
 		int max_iterations = 20;
 		int new_lenn = lenn;
 		//printf("%d", lenn);
-		
+
 		int need_spaces = len_of_str - (lenn - space_cnt);
 		if (space_cnt > 0) {
 			now_spaces = need_spaces / space_cnt;
 			int extra_spaces = need_spaces % space_cnt;
-			
+
 			int space_index = 0;
 			for (int i = 0; i < lenn; i++) {
 				if (s[i] != '_') {
@@ -121,7 +123,7 @@ char* do_the_deal(char* s) {
 			}
 		}
 		printf("\n");
-	} 
+	}
 	else if (lenn > len_of_str) {
 		int last_space = -1;
 		int now_lenn = 0;
@@ -196,104 +198,33 @@ char* do_the_deal(char* s) {
 			return ost;
 		}
 	}
-	//	printf("%s %s\n", s, "больше чем надо");
-	//	int lines_cnt = 1;
-	//	//lines_cnt++;
-
-
-	//	// количество строк		
-	//	for (int i = 0; i < lenn; i++) {
-	//		if (s[i] == '_') {
-	//			lines_cnt++;
-	//		}
-
-	//	}
-	//	//printf("%d %s\n", lines_cnt, "колво пробелов");
-	//	int index_now = 0;
-	//	char* now_str = malloc(1);
-	//	now_str[0] = '\0';
-
-	//	// выделяем строки в массив
-	//	char** lines = malloc(lines_cnt * sizeof(char*));
-	//	for (int i = 0; i < lines_cnt; i++) {
-	//		lines[i] = NULL;
-	//	}
-
-	//	//char** lines[0];
-	//	//printf("%d", 0);
-
-	//	int count = 0;
-	//	for (int i = 0; i < lenn; i++) {
-
-	//		//printf("%s\n", buffer[]);
-
-	//		if ((s[i] == '_')) {
-
-	//			if (index_now < lines_cnt) {
-
-	//				lines[index_now] = now_str;
-	//				//printf("%s\n", lines[index_now]);
-	//				index_now++;
-	//				now_str = malloc(1);
-	//				now_str[0] = '\0';
-	//			}
-	//		}
-	//		else {
-	//			//printf("%d\n", 3);
-	//			now_str = append_char_to_string(now_str, s[i]);
-	//		}
-	//	}
-
-
-		// теперь есть массив слов
-
-	//	printf("%c", s[len_of_str]);
-	//	printf("%c", s[len_of_str - 1]);
-	//	printf("капец");
-	//	if ((s[len_of_str - 1]) != '_' && (s[len_of_str] == '_')) {
-	//		printf("%s нужная строка \n", s);
-	//		for (int i = 0; i < len_of_str; i++) {
-	//			printf("%c", s[i]);
-	//		}
-	//		printf("%c", '\n');
-	//		for (int j = len_of_str; j < lenn; j++) {
-	//			if (s[j] != '_') {
-	//				ost = append_char_to_string(ost, s[j]);
-	//			}
-	//		}
-	//		if (ost) {
-	//			return ost;
-
-	//		}
-	//		return "null";
-	//	}
-
-
-	//	//for (int i = 0; i < lines_cnt; i++) {
-	//		//printf("%s+++", lines[i]);
-	//	//}
-
-	//}
+	
 
 	return "null";
 }
 
 int main() {
-	setlocale(LC_ALL, "Russian");
-
+	SetConsoleOutputCP(1251);
+	SetConsoleCP(1251);
+	//setlocale(LC_ALL, "ru_RU.UTF-8");
 	// прочитал
-	char* name = "F:/ProgramFilesX/Codes/meow_c/Project1/Project1/example.txt";
+	//char* name = "F:/ProgramFilesX/Codes/meow_c/Project1/Project1/example.txt";
+
+	//char* name = "C:/Users/danil/PycharmProjects/pythonProject/venv/codes/C_meow/C_meow/example.txt";
+
+	char name[256];
+	printf("type filename: ");
+	scanf_s("%255s", name, (unsigned)sizeof(name));
+
 	FILE* file = fopen(name, "r");
 	if (file == NULL) {
 		return NULL;
 	}
 
-	// длина файла
 	fseek(file, 0, SEEK_END);
 	long size = ftell(file);
 	fseek(file, 0, SEEK_SET);
 
-	// в буфер все записали
 	if (size <= 0) {
 		fclose(file);
 		return NULL;
@@ -312,7 +243,6 @@ int main() {
 	int lines_cnt = 1;
 	//lines_cnt++;
 
-	// количество строк		
 	for (int i = 0; i < read; i++) {
 		if (buffer[i] == '\n' && lines_cnt < 10) {
 			lines_cnt++;
@@ -326,7 +256,6 @@ int main() {
 	char* now_str = malloc(1);
 	now_str[0] = '\0';
 
-	// выделяем строки в массив
 	char** lines = malloc(lines_cnt * sizeof(char*));
 	for (int i = 0; i < lines_cnt; i++) {
 		lines[i] = NULL;
@@ -360,14 +289,14 @@ int main() {
 		lines[index_now] = now_str;
 	}
 
-	printf("колво строк было изначально: %d\n", lines_cnt);
+	printf("n of str was: %d\n", lines_cnt);
 
 	char* meow = "\0";
 
 	for (int i = 0; i < lines_cnt; i++) {
 		if (lines[i] != NULL) {
 			char* new_string = lines[i];
-			
+
 			if (meow != NULL && strcmp(meow, "null") != 0 && strlen(meow) > 0) {
 				char* temp = malloc(strlen(new_string) + strlen(meow) + 2);
 				strcpy_s(temp, strlen(meow) + 1, meow);
@@ -375,7 +304,7 @@ int main() {
 				strcat_s(temp, strlen(temp) + strlen(new_string) + 1, new_string);
 				new_string = temp;
 			}
-			
+
 			meow = do_the_deal(new_string);
 		}
 	}
@@ -389,7 +318,7 @@ int main() {
 		meow = do_the_deal(meow);
 		len_meow = strlen(meow);
 	}
-	
+
 	if (len_meow > 0 && strcmp(meow, "null") != 0) {
 		for (int i = 0; i < len_meow; i++) {
 			printf("%c", meow[i]);
