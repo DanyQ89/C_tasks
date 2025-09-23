@@ -96,14 +96,14 @@ char* do_the_deal(char* s) {
 	}
 	else if (lenn < len_of_str) {
 		int now_spaces = 1;
-		int max_iterations = 20;
+		int max_spaces = 20;
 		int new_lenn = lenn;
 		//printf("%d", lenn);
 
 		int need_spaces = len_of_str - (lenn - space_cnt);
 		if (space_cnt > 0) {
 			now_spaces = need_spaces / space_cnt;
-			int extra_spaces = need_spaces % space_cnt;
+			int ost_spacesss = need_spaces % space_cnt;
 
 			int space_index = 0;
 			for (int i = 0; i < lenn; i++) {
@@ -112,7 +112,7 @@ char* do_the_deal(char* s) {
 				}
 				else {
 					int current_spaces = now_spaces;
-					if (space_index < extra_spaces) {
+					if (space_index < ost_spacesss) {
 						current_spaces++;
 					}
 					for (int j = 0; j < current_spaces; j++) {
@@ -207,7 +207,6 @@ int main() {
 	SetConsoleOutputCP(1251);
 	SetConsoleCP(1251);
 	//setlocale(LC_ALL, "ru_RU.UTF-8");
-	// прочитал
 	//char* name = "F:/ProgramFilesX/Codes/meow_c/Project1/Project1/example.txt";
 
 	//char* name = "C:/Users/danil/PycharmProjects/pythonProject/venv/codes/C_meow/C_meow/example.txt";
