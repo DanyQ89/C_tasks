@@ -44,8 +44,9 @@ int to_16(int num) {
 
 	//printf("%d %d meow\n", num, ost);
 
-	ost = num % syst;
-	num = num / syst;
+	ost = num & (syst - 1);
+	num = num >> syst;
+	printf("%d num\n", num);
 	to_16(num);
 
 	if (ost < 10) {
@@ -65,7 +66,11 @@ int to_16(int num) {
 
 
 int main() {
-	setlocale(LC_ALL, "Russian");
+	//setlocale(LC_ALL, "Russian");
+	setlocale(LC_ALL, "ru_RU.UTF-8");
+
+	//SetConsoleOutputCP(1251);
+	//SetConsoleCP(1251);
 
 
 	//int a = 235;
@@ -97,6 +102,8 @@ int main() {
 
 	lenn = get_len(a);
 
+
+	printf("\n%d need \n", a);
 	print_num_in_2(a, lenn);
 	to_16(a);
 
