@@ -45,7 +45,7 @@ int to_16(int num) {
 	//printf("%d %d meow\n", num, ost);
 
 	ost = num & (syst - 1);
-	num = num >> syst;
+	num = num >> 4;
 	printf("%d num\n", num);
 	to_16(num);
 
