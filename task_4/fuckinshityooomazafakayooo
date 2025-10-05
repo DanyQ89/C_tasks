@@ -1,0 +1,220 @@
+#include <SDL.h>
+//#include <SDL_images.h>
+//#include <SDL_timer.h>
+#include <stdio.h>
+#include <stdbool.h>
+#include <math.h>
+#define width_squares 8
+#define height_squares 8
+#define square_size 90
+//#define k 1
+//#define l 1
+//#define m 2 
+//#define n 1
+
+
+//void draw_chess(int width, int height) {
+//    
+//}
+
+void meeeeeeooooow(SDL_Renderer* ren, int yes_or_no,int k, int l,int m,int n) {
+
+
+    SDL_SetRenderDrawColor(ren, 0, 0, 0, 0);
+    SDL_RenderClear(ren);
+    SDL_SetRenderDrawColor(ren, 255, 255, 255, 255);
+
+
+
+    int color = 3;
+    int num = 0;
+    for (int i = 0; i < width_squares; i++) {
+        //color++;
+        for (int j = 0; j < height_squares; j++) {
+
+            SDL_Rect rect = { i * square_size, j * square_size, square_size, square_size };
+
+            if ((k == i + 1 && l == j + 1) || (m == i + 1 && n == j + 1)) {
+                //SDL_RenderFillRect(ren, &rect);
+
+                if (yes_or_no) {
+                    SDL_SetRenderDrawColor(ren, 0, 255, 0, 0);
+                }
+                else {
+                    SDL_SetRenderDrawColor(ren, 255, 67, 164, 0);
+                }
+                SDL_RenderFillRect(ren, &rect);
+                SDL_SetRenderDrawColor(ren, 255, 255, 255, 255);
+
+
+
+            }
+            else {
+                if (((i + j) % 2) == 0) {
+                    SDL_RenderFillRect(ren, &rect);
+
+                }
+            }
+
+
+            num++;
+            color++;
+        }
+        color++;
+        //printf("%d  color  %d column\n", color, i);
+
+    }
+    //printf("%d\n", num);
+    if (yes_or_no) {
+        printf("Colors are similar!");
+    }
+    else {
+        printf("Colors aren`t similar");
+    }
+
+    SDL_RenderPresent(ren);
+
+}
+
+void draw_simple(SDL_Renderer* ren) {
+    SDL_SetRenderDrawColor(ren, 0, 0, 0, 0);
+    SDL_RenderClear(ren);
+    SDL_SetRenderDrawColor(ren, 255, 255, 255, 255);
+
+
+
+    int color = 3;
+    int num = 0;
+    for (int i = 0; i < width_squares; i++) {
+        //color++;
+        for (int j = 0; j < height_squares; j++) {
+
+            SDL_Rect rect = { i * square_size, j * square_size, square_size, square_size };
+
+
+
+            if (((i + j) % 2) == 0) {
+                SDL_RenderFillRect(ren, &rect);
+
+            }
+
+
+            num++;
+            color++;
+        }
+        color++;
+        //printf("%d  color  %d column\n", color, i);
+
+    }
+
+    SDL_RenderPresent(ren);
+}
+
+
+int main() {
+    if (SDL_Init(SDL_INIT_VIDEO) != 0) {
+        printf("SDL init error: %s\n", SDL_GetError());
+        return 1;
+    }
+
+    // окно
+    int width = width_squares * square_size;
+    int height = height_squares * square_size;
+    SDL_Window* win = SDL_CreateWindow(
+        "Chess",
+        SDL_WINDOWPOS_CENTERED,
+        SDL_WINDOWPOS_CENTERED,
+        width + 1,
+        height + 1,
+        0
+    );
+
+
+    // создает для ускорения работы окна и показывает его
+    Uint32 render_flags = SDL_RENDERER_ACCELERATED;
+    SDL_Renderer* ren = SDL_CreateRenderer(win, -1,
+        render_flags);
+
+
+    draw_simple(ren);
+    
+    int k = 0, l = 0, m = 0, n = 0, have = 0;
+
+
+
+
+    
+
+    bool running = true;
+    SDL_Event event;
+    while (running) {
+        while (SDL_PollEvent(&event)) { // любое событие
+            if (event.type == SDL_QUIT) running = false; // крестик
+            if (event.type == SDL_KEYDOWN) { // если любая нажата
+                if (SDL_GetModState() & KMOD_CTRL) { // и ctrl (сложно чисто отдельно)
+                    running = false;
+                }
+                if (event.key.keysym.sym == SDLK_RETURN) { // если ретурн просто нажали
+                    running = false;
+                }
+
+            }
+
+
+
+
+            if (event.type == SDL_MOUSEBUTTONDOWN) {
+                //printf("click\n");
+                int x, y;
+                SDL_GetMouseState(&x, &y);
+                int num_w, num_h;
+                num_w = x / square_size ;
+                num_h = y / square_size ;
+                if (have) {
+                    int yes_or_no;
+
+                    m = num_w + 1;
+                    n = num_h + 1;
+                    
+                    printf("\n %d %d %d %d ", k, l, m, n);
+
+                    
+                    if (((k + l) % 2) == ((m + n) % 2)) {
+                        yes_or_no = 1;
+                    }
+                    else {
+                        yes_or_no = 0;
+                    }
+
+
+                    meeeeeeooooow(ren, yes_or_no, k, l, m, n);
+                    have = 0;
+                    k = 0;
+                    l = 0;
+                    m = 0;
+                    n = 0;
+                    
+                }
+                else {
+                    //printf("%d %d coords need", num_w, num_h);
+
+                    k = num_w + 1;
+                    l = num_h + 1;
+                    have = 1;
+                }
+               
+                //printf("%d %d\n", x, y);
+            }
+
+        SDL_Delay(10);
+
+        }
+    }
+
+    // если убрать то нагружаю память проги будут тормозить из за неочистки
+    SDL_DestroyRenderer(ren);
+    SDL_DestroyWindow(win);
+    SDL_Quit();
+
+    return 0;
+}
