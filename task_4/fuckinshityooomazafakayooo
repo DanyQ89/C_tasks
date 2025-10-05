@@ -4,8 +4,8 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <math.h>
-#define width_squares 8
-#define height_squares 8
+#define width_squares 2
+#define height_squares 3
 #define square_size 90
 //#define k 1
 //#define l 1
@@ -17,66 +17,7 @@
 //    
 //}
 
-void meeeeeeooooow(SDL_Renderer* ren, int yes_or_no,int k, int l,int m,int n) {
-
-
-    SDL_SetRenderDrawColor(ren, 0, 0, 0, 0);
-    SDL_RenderClear(ren);
-    SDL_SetRenderDrawColor(ren, 255, 255, 255, 255);
-
-
-
-    int color = 3;
-    int num = 0;
-    for (int i = 0; i < width_squares; i++) {
-        //color++;
-        for (int j = 0; j < height_squares; j++) {
-
-            SDL_Rect rect = { i * square_size, j * square_size, square_size, square_size };
-
-            if ((k == i + 1 && l == j + 1) || (m == i + 1 && n == j + 1)) {
-                //SDL_RenderFillRect(ren, &rect);
-
-                if (yes_or_no) {
-                    SDL_SetRenderDrawColor(ren, 0, 255, 0, 0);
-                }
-                else {
-                    SDL_SetRenderDrawColor(ren, 255, 67, 164, 0);
-                }
-                SDL_RenderFillRect(ren, &rect);
-                SDL_SetRenderDrawColor(ren, 255, 255, 255, 255);
-
-
-
-            }
-            else {
-                if (((i + j) % 2) == 0) {
-                    SDL_RenderFillRect(ren, &rect);
-
-                }
-            }
-
-
-            num++;
-            color++;
-        }
-        color++;
-        //printf("%d  color  %d column\n", color, i);
-
-    }
-    //printf("%d\n", num);
-    if (yes_or_no) {
-        printf("Colors are similar!");
-    }
-    else {
-        printf("Colors aren`t similar");
-    }
-
-    SDL_RenderPresent(ren);
-
-}
-
-void draw_simple(SDL_Renderer* ren) {
+void pre_meow_be_ready(SDL_Renderer* ren) {
     SDL_SetRenderDrawColor(ren, 0, 0, 0, 0);
     SDL_RenderClear(ren);
     SDL_SetRenderDrawColor(ren, 255, 255, 255, 255);
@@ -111,6 +52,67 @@ void draw_simple(SDL_Renderer* ren) {
 }
 
 
+void meeeeeeooooow_ohhhyeah(SDL_Renderer* ren, int yes_or_no,int k, int l,int m,int n) {
+
+
+    SDL_SetRenderDrawColor(ren, 0, 0, 0, 0);
+    SDL_RenderClear(ren);
+    SDL_SetRenderDrawColor(ren, 255, 255, 255, 255);
+
+
+
+    //int color = 3;
+    //int num = 0;
+    for (int i = 0; i < width_squares; i++) {
+        //color++;
+        for (int j = 0; j < height_squares; j++) {
+
+            SDL_Rect rect = { i * square_size, j * square_size, square_size, square_size };
+
+            if ((k == i + 1 && l == j + 1) || (m == i + 1 && n == j + 1)) {
+                //SDL_RenderFillRect(ren, &rect);
+
+                if (yes_or_no) {
+                    SDL_SetRenderDrawColor(ren, 0, 255, 0, 0);
+                }
+                else {
+                    SDL_SetRenderDrawColor(ren, 255, 67, 164, 0);
+                }
+                SDL_RenderFillRect(ren, &rect);
+                SDL_SetRenderDrawColor(ren, 255, 255, 255, 255);
+
+
+
+            }
+            else {
+                if (((i + j) % 2) == 0) {
+                    SDL_RenderFillRect(ren, &rect);
+
+                }
+            }
+
+
+            //num++;
+            //color++;
+        }
+        //color++;
+        //printf("%d  color  %d column\n", color, i);
+
+    }
+    //printf("%d\n", num);
+    if (yes_or_no) {
+        printf("Colors are similar!");
+    }
+    else {
+        printf("Colors aren`t similar");
+    }
+
+    SDL_RenderPresent(ren);
+
+}
+
+
+
 int main() {
     if (SDL_Init(SDL_INIT_VIDEO) != 0) {
         printf("SDL init error: %s\n", SDL_GetError());
@@ -136,7 +138,7 @@ int main() {
         render_flags);
 
 
-    draw_simple(ren);
+    pre_meow_be_ready(ren);
     
     int k = 0, l = 0, m = 0, n = 0, have = 0;
 
@@ -187,7 +189,7 @@ int main() {
                     }
 
 
-                    meeeeeeooooow(ren, yes_or_no, k, l, m, n);
+                    meeeeeeooooow_ohhhyeah(ren, yes_or_no, k, l, m, n);
                     have = 0;
                     k = 0;
                     l = 0;
