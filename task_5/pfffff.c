@@ -14,7 +14,8 @@
 #define COLOR_RENDER_B 104
 #define COLOR_RENDER_A 255
 #define opacity 40
-#define rasst_move 5.0 
+#define rasst_move 4.0 
+#define delta_d 0.5
 
 typedef struct {
     SDL_Window* window;
@@ -102,6 +103,7 @@ void draw_w_point(SDL_Renderer* ren, int x, int y, int d, SDL_Color color) {
         }
 
     }
+        
 
 
 }
@@ -154,7 +156,7 @@ Point_Update update_point(Point current_pos, double current_diameter, Command_pr
     Point_Update update = {
         .now_pos = current_pos,
         .last_pos = current_pos,
-        .now_diameter = current_diameter + 0.9,
+        .now_diameter = current_diameter + delta_d,
         .moved = false
     };
 
