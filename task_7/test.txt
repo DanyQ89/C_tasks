@@ -1,0 +1,7 @@
+malloc 100
+malloc 200
+malloc 50
+print
+free 0
+malloc 80
+print
