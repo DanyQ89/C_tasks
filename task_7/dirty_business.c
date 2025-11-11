@@ -149,7 +149,7 @@ void* malloc_buddy(int size) {
     }
 
     if (level == -1) {
-        printf("No suitable level found for size %d\n", needed_size);
+        printf("Нет подходящего уровня %d\n", needed_size);
         return NULL;
     }
 
@@ -199,12 +199,11 @@ void* malloc_buddy(int size) {
                 }
             }
 
-            printf("Allocated %d bytes at %p (level %d)\n", needed_size, block, level);
             return block;
         }
     }
 
-    printf("No free blocks found for level %d\n", level);
+    printf("Нет свободных блоков на уровне %d\n", level);
     return NULL;
 }
 
@@ -230,7 +229,7 @@ void free_buddy(void* ptr) {
     }
 
     if (block_level == -1) {
-        printf("Error: Block not found in allocated lists: %p\n", ptr);
+        printf("Error: Блок не найден в фри листах: %p\n", ptr);
         return;
     }
 
@@ -261,8 +260,6 @@ void free_buddy(void* ptr) {
             break;
         }
     }
-
-    printf("Freed block at level %d: %p\n", block_level, ptr);
 
     // Пытаемся слиться с buddy
     merge_buddies(ptr, block_level);
@@ -383,28 +380,18 @@ void solve_the_line(char* line) {
     if (sscanf(line, "%19s %d", command, &size) == 2) {
         if (strcmp(command, "malloc") == 0) {
             void* ptr = malloc_buddy(size);
-            if (ptr) {
-                printf("malloc(%d) = %p\n", size, ptr);
-            }
-            else {
-                printf("malloc(%d) failed: no memory available\n", size);
-            }
         }
         else if (strcmp(command, "free") == 0) {
-            if (all_pointers_count == 0) {
-                printf("No pointers allocated yet!\n");
-            }
-            else if (size >= 0 && size < all_pointers_count) {
+            if (size >= 0 && size < all_pointers_count && all_pointers_count != 0) {
                 if (all_pointers[size].is_allocated) {
                     free_buddy(all_pointers[size].ptr);
-                    printf("freed pointer[%d] = %p\n", size, all_pointers[size].ptr);
                 }
                 else {
-                    printf("Error: pointer[%d] is already freed\n", size);
+                    printf("Error: pointer[%d] уже свободен\n", size);
                 }
             }
             else {
-                printf("Invalid free index: %d (max: %d)\n", size, all_pointers_count - 1);
+                printf("Error:неправильный свободный индекс %d (max: %d)\n", size, all_pointers_count - 1);
             }
         }
     }
@@ -414,4 +401,5 @@ void solve_the_line(char* line) {
             print_memory_state();
         }
     }
+
 }
