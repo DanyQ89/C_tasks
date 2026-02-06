@@ -18,7 +18,7 @@ int check_el(char set[][MAX_SIZE], char* name, int counter) {
 
 	for (int i = 0; i < counter; i++) {
 		if (strcmp(set[i], name) == 0) {
-			return 0;
+			return 1;
 		}
 	}
 	return 0;
@@ -56,9 +56,8 @@ int main(int argc, char *argv[]) {
 		sprintf(need, "%s/%s", catalog, argv[i]);
 
 
-		// указатель может быть слишком большой
+		// не int, так как при успехе выдает большой указатель
 		intptr_t res = _findfirst(need, &file);
-		//int res = _findfirst(need, &file);
 
 		if (res == -1) {
 			continue;
@@ -73,51 +72,13 @@ int main(int argc, char *argv[]) {
 				cnt++;
 			}
 		}
-		while (_findnext(res, &file) != -1);
+		while (_findnext(res, &file) == 0);
 
 
-			//if (res != -1) {
-
-			//	el = file.name;
-			//	has = check_el(meow_set, el, cnt);
-
-			//	if (has == 0) {
-			//		strcpy(meow_set[cnt], el);
-			//		cnt++;
-			//	}
-
-			//	//printf("%s\n", file.name);
-			//	while (_findnext(res, &file) != -1) {
-
-			//		el = file.name;
-			//		has = check_el(meow_set, el, cnt);
-
-			//		if (has == 0) {
-			//			strcpy(meow_set[cnt], el);
-			//			cnt++;
-			//		}
-
-			//		//printf("%s\n", file.name);
-
-			//	}
-			//	
-			//	_findclose(res);
-			//}
-
-
-			//if (res != -1) {
-			//	printf("%s\n", file.name);
-			//	while (_findnext(res, &file) != -1) {
-			//		printf("%s\n", file.name);
-
-			//	}
-			//}
+			
+		_findclose(res);
 
 	}
-
-	//for (int i = 0; i < cnt; i++) {
-		//printf("%s\n", meow_set[i]);
-	//}
 
 	if (cnt) {
 		for (int i = 0; i < cnt; i++) {
