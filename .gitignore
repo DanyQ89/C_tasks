@@ -1,0 +1,27 @@
+# Visual Studio
+.vs/
+*.ipch
+*.db
+*.db-shm
+*.db-wal
+*.vsidx
+*.wsuo
+*.opendb
+*.VC.db
+applicationhost.config
+ProjectSettings.json
+VSWorkspaceState.json
+CppProperties.json
+Debug/
+Release/
+x64/
+*.exe
+*.obj
+*.log
+*.tlog
+
+# VS Code
+.vscode/
+
+# Пользовательские файлы
+*.user
