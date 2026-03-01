@@ -1,0 +1,72 @@
+MenuBegin
+WindowBegin
+	Position=(200,100)
+	Color=30,30,30
+WindowEnd
+ButtonBegin
+	Position=(100,50)
+	Color=100,100,100
+	HighlightColor=200,200,0
+	Name=Start
+ButtonEnd
+ButtonBegin
+	Position=(300,50)
+	Color=100,100,100
+	HighlightColor=200,200,0
+	Name=Load
+ButtonEnd
+ButtonBegin
+	Position=(500,50)
+	Color=100,100,100
+	HighlightColor=200,200,0
+	Name=Settings
+ButtonEnd
+ButtonBegin
+	Position=(700,50)
+	Color=100,100,100
+	HighlightColor=200,200,0
+	Name=Controls
+ButtonEnd
+ButtonBegin
+	Position=(100,200)
+	Color=100,100,100
+	HighlightColor=200,200,0
+	Name=Audio
+ButtonEnd
+ButtonBegin
+	Position=(300,200)
+	Color=100,100,100
+	HighlightColor=200,200,0
+	Name=Video
+ButtonEnd
+ButtonBegin
+	Position=(500,200)
+	Color=100,100,100
+	HighlightColor=200,200,0
+	Name=Multiplayer
+ButtonEnd
+ButtonBegin
+	Position=(700,200)
+	Color=100,100,100
+	HighlightColor=200,200,0
+	Name=Achievements
+ButtonEnd
+ButtonBegin
+	Position=(100,350)
+	Color=100,100,100
+	HighlightColor=200,200,0
+	Name=Stats
+ButtonEnd
+ButtonBegin
+	Position=(300,350)
+	Color=100,100,100
+	HighlightColor=200,200,0
+	Name=Credits
+ButtonEnd
+ButtonBegin
+	Position=(500,350)
+	Color=100,100,100
+	HighlightColor=200,200,0
+	Name=Exit
+ButtonEnd
+MenuEnd
