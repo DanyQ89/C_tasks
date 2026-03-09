@@ -1,0 +1,216 @@
+LevelStart
+; Ряд 1 (верхушка)
+BlockBegin
+    Position=(440,80)
+    Size=(60,30)
+    Color=255,200,200
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(500,80)
+    Size=(60,30)
+    Color=255,200,200
+    Health=1
+BlockEnd
+
+; Ряд 2
+BlockBegin
+    Position=(380,110)
+    Size=(60,30)
+    Color=255,200,200
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(440,110)
+    Size=(60,30)
+    Color=255,200,200
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(500,110)
+    Size=(60,30)
+    Color=255,200,200
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(560,110)
+    Size=(60,30)
+    Color=255,200,200
+    Health=1
+BlockEnd
+
+; Ряд 3
+BlockBegin
+    Position=(320,140)
+    Size=(60,30)
+    Color=255,200,200
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(380,140)
+    Size=(60,30)
+    Color=255,200,200
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(440,140)
+    Size=(60,30)
+    Color=255,200,200
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(500,140)
+    Size=(60,30)
+    Color=255,200,200
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(560,140)
+    Size=(60,30)
+    Color=255,200,200
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(620,140)
+    Size=(60,30)
+    Color=255,200,200
+    Health=1
+BlockEnd
+
+; Ряд 4 (самый широкий)
+BlockBegin
+    Position=(260,170)
+    Size=(60,30)
+    Color=255,200,200
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(320,170)
+    Size=(60,30)
+    Color=255,200,200
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(380,170)
+    Size=(60,30)
+    Color=255,200,200
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(440,170)
+    Size=(60,30)
+    Color=255,200,200
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(500,170)
+    Size=(60,30)
+    Color=255,200,200
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(560,170)
+    Size=(60,30)
+    Color=255,200,200
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(620,170)
+    Size=(60,30)
+    Color=255,200,200
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(680,170)
+    Size=(60,30)
+    Color=255,200,200
+    Health=1
+BlockEnd
+
+; Ряд 5 (начало сужения)
+BlockBegin
+    Position=(320,200)
+    Size=(60,30)
+    Color=255,200,200
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(380,200)
+    Size=(60,30)
+    Color=255,200,200
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(440,200)
+    Size=(60,30)
+    Color=255,200,200
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(500,200)
+    Size=(60,30)
+    Color=255,200,200
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(560,200)
+    Size=(60,30)
+    Color=255,200,200
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(620,200)
+    Size=(60,30)
+    Color=255,200,200
+    Health=1
+BlockEnd
+
+; Ряд 6
+BlockBegin
+    Position=(380,230)
+    Size=(60,30)
+    Color=255,200,200
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(440,230)
+    Size=(60,30)
+    Color=255,200,200
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(500,230)
+    Size=(60,30)
+    Color=255,200,200
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(560,230)
+    Size=(60,30)
+    Color=255,200,200
+    Health=1
+BlockEnd
+
+; Ряд 7
+BlockBegin
+    Position=(440,260)
+    Size=(60,30)
+    Color=255,200,200
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(500,260)
+    Size=(60,30)
+    Color=255,200,200
+    Health=1
+BlockEnd
+
+; Ряд 8 (кончик)
+BlockBegin
+    Position=(470,290)
+    Size=(60,30)
+    Color=255,200,200
+    Health=1
+BlockEnd
+LevelEnd
+

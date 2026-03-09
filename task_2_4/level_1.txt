@@ -1,0 +1,308 @@
+LevelStart
+BlockBegin
+    Position=(100,100)
+    Size=(80,30)
+    Color=255,0,0
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(190,100)
+    Size=(80,30)
+    Color=255,0,0
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(280,100)
+    Size=(80,30)
+    Color=255,0,0
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(370,100)
+    Size=(80,30)
+    Color=255,0,0
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(460,100)
+    Size=(80,30)
+    Color=255,0,0
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(550,100)
+    Size=(80,30)
+    Color=255,0,0
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(640,100)
+    Size=(80,30)
+    Color=255,0,0
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(730,100)
+    Size=(80,30)
+    Color=255,0,0
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(820,100)
+    Size=(80,30)
+    Color=255,0,0
+    Health=1
+BlockEnd
+
+BlockBegin
+    Position=(100,140)  // 100 + 30 + 10 = 140
+    Size=(80,30)
+    Color=255,165,0
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(190,140)
+    Size=(80,30)
+    Color=255,165,0
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(280,140)
+    Size=(80,30)
+    Color=255,165,0
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(370,140)
+    Size=(80,30)
+    Color=255,165,0
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(460,140)
+    Size=(80,30)
+    Color=255,165,0
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(550,140)
+    Size=(80,30)
+    Color=255,165,0
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(640,140)
+    Size=(80,30)
+    Color=255,165,0
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(730,140)
+    Size=(80,30)
+    Color=255,165,0
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(820,140)
+    Size=(80,30)
+    Color=255,165,0
+    Health=1
+BlockEnd
+
+BlockBegin
+    Position=(100,180)  // 140 + 30 + 10 = 180
+    Size=(80,30)
+    Color=255,255,0
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(190,180)
+    Size=(80,30)
+    Color=255,255,0
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(280,180)
+    Size=(80,30)
+    Color=255,255,0
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(370,180)
+    Size=(80,30)
+    Color=255,255,0
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(460,180)
+    Size=(80,30)
+    Color=255,255,0
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(550,180)
+    Size=(80,30)
+    Color=255,255,0
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(640,180)
+    Size=(80,30)
+    Color=255,255,0
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(730,180)
+    Size=(80,30)
+    Color=255,255,0
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(820,180)
+    Size=(80,30)
+    Color=255,255,0
+    Health=1
+BlockEnd
+
+BlockBegin
+    Position=(145,220)  // 180 + 30 + 10 = 220
+    Size=(80,30)
+    Color=0,255,0
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(235,220)
+    Size=(80,30)
+    Color=0,255,0
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(325,220)
+    Size=(80,30)
+    Color=0,255,0
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(415,220)
+    Size=(80,30)
+    Color=0,255,0
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(505,220)
+    Size=(80,30)
+    Color=0,255,0
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(595,220)
+    Size=(80,30)
+    Color=0,255,0
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(685,220)
+    Size=(80,30)
+    Color=0,255,0
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(775,220)
+    Size=(80,30)
+    Color=0,255,0
+    Health=1
+BlockEnd
+
+BlockBegin
+    Position=(190,260)  // 220 + 30 + 10 = 260
+    Size=(80,30)
+    Color=0,0,255
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(280,260)
+    Size=(80,30)
+    Color=0,0,255
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(370,260)
+    Size=(80,30)
+    Color=0,0,255
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(460,260)
+    Size=(80,30)
+    Color=0,0,255
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(550,260)
+    Size=(80,30)
+    Color=0,0,255
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(640,260)
+    Size=(80,30)
+    Color=0,0,255
+    Health=1
+BlockEnd
+BlockBegin
+    Position=(730,260)
+    Size=(80,30)
+    Color=0,0,255
+    Health=1
+BlockEnd
+
+BlockBegin
+    Position=(280,300)  // 260 + 30 + 10 = 300
+    Size=(80,30)
+    Color=128,0,128
+    Health=2
+BlockEnd
+BlockBegin
+    Position=(370,300)
+    Size=(80,30)
+    Color=128,0,128
+    Health=2
+BlockEnd
+BlockBegin
+    Position=(460,300)
+    Size=(80,30)
+    Color=128,0,128
+    Health=2
+BlockEnd
+BlockBegin
+    Position=(550,300)
+    Size=(80,30)
+    Color=128,0,128
+    Health=2
+BlockEnd
+BlockBegin
+    Position=(640,300)
+    Size=(80,30)
+    Color=128,0,128
+    Health=2
+BlockEnd
+
+BlockBegin
+    Position=(370,340)  // 300 + 30 + 10 = 340
+    Size=(80,30)
+    Color=255,215,0
+    Health=3
+BlockEnd
+BlockBegin
+    Position=(460,340)
+    Size=(80,30)
+    Color=255,215,0
+    Health=3
+BlockEnd
+BlockBegin
+    Position=(550,340)
+    Size=(80,30)
+    Color=255,215,0
+    Health=3
+BlockEnd
+LevelEnd
