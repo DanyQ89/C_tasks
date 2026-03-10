@@ -5,11 +5,11 @@
 #include <assert.h>
 #include <windows.h>
 #include <locale.h>
-#include "header.h"
 #include <SDL.h>
 #include <SDL_ttf.h>
-
-
+#include "../meow/meow/main.h"
+#include "../meow/meow/types.h"
+#include "../meow/meow/constants.h"
 
 App SystemOpen() {
     App app = { NULL, NULL };
@@ -63,12 +63,14 @@ int main() {
         printf("TTF_Init Error: %s\n", TTF_GetError());
         return 1;
     }
+    init_fonts();
     App app = SystemOpen();
 
 
     //SystemInitialize("menu_main.txt");
 
-    Menu main_menu = SystemInitialize("./menu_main.txt");
+    //Menu main_menu = SystemInitialize("./menu_main.txt");
+    Menu main_menu = SystemInitialize("C:/Users/danil/PycharmProjects/pythonProject/venv/codes/help/meow/menu_main.txt");
     SystemUpdate(app.window, app.renderer, main_menu);
     //char* choice = SystemUpdate(app.window, app.renderer, main_menu);
 

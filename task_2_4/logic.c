@@ -3,6 +3,10 @@
 #include <stdlib.h>
 #include <math.h>
 #include <string.h>
+#include "../meow/meow/logic.h"
+#include "../meow/meow/types.h"
+#include "../meow/meow/constants.h"
+#include "../meow/meow/draw.h"
 
 BallList reset_balls(BlockList* blocks) {
     BallList balls = { 0 };
@@ -128,7 +132,7 @@ void check_balls_collision(BallList* balls, BlockList* blocks) {
         Ball ball_now = balls->balls_list[i];
 
         int ball_speed_now = (int)sqrt(ball_now.velocity.x * ball_now.velocity.x
-            + ball_now.velocity.y * ball_now.velocity.y) + 1;
+            + ball_now.velocity.y * ball_now.velocity.y) + BALL_SPEED;
 
         int ball_x = balls->balls_list[i].position.x;
         int ball_y = balls->balls_list[i].position.y;

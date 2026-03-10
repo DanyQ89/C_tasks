@@ -8,7 +8,9 @@
 #include "header.h"
 #include <SDL.h>
 #include <stdlib.h>
-
+#include "../meow/meow/parsing.h"
+#include "../meow/meow/types.h"
+#include "../meow/meow/constants.h"
 
 char* trim(char* str) {
 	while (*str && (*str == ' ' || *str == '\t')) {
@@ -183,11 +185,14 @@ Menu SystemInitialize(char* filename) {
 }
 
 BlockList LevelInitialize(char* filename) {
+	printf("Loading level: %s\n", filename);
 	FILE* file = fopen(filename, "r");
 	if (file == NULL) {
+		printf("ERROR: Cannot open level file %s\n", filename);
 		BlockList empty = { 0 };
 		return empty;
 	}
+	printf("Level file opened, counting blocks...\n");
 
 	char line[256];
 	char* eq = "=";

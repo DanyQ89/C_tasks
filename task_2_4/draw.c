@@ -1,6 +1,9 @@
 #include "header.h"
 #include <SDL.h>
 #include <SDL_ttf.h>
+#include "../meow/meow/draw.h"
+#include "../meow/meow/types.h"
+#include "../meow/meow/constants.h"
 
 #define COLOR_RENDER_R 181
 #define COLOR_RENDER_G 101
@@ -217,7 +220,8 @@ void show_window(SDL_Renderer* ren) {
 
 
 void draw_lives(SDL_Renderer* ren, int lives_left) {
-    SDL_Surface* image = SDL_LoadBMP("./heart.bmp");
+    //SDL_Surface* image = SDL_LoadBMP("./heart.bmp");
+    SDL_Surface* image = SDL_LoadBMP("C:/Users/danil/PycharmProjects/pythonProject/venv/codes/help/meow/heart.bmp");
     if (!image) {
         printf("Error of loading Image meow\n");
     }

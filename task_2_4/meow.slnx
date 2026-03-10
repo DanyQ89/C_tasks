@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="meow/meow.vcxproj" Id="2d64df9e-abae-4231-ad6a-78ad8c8daa63" />
+</Solution>

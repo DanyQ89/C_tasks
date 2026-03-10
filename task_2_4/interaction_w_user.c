@@ -1,6 +1,9 @@
 #include <SDL.h>
 #include "header.h"
-
+#include "../meow/meow/types.h"
+#include "../meow/meow/constants.h"
+#include "../meow/meow/parsing.h"
+#include "../meow/meow/main.h"
 
 Command_pressed get_command(const Uint8* keystate) {
     Command_pressed cmd = { 0 };
@@ -25,7 +28,7 @@ void SystemUpdate(SDL_Window* window, SDL_Renderer* ren, Menu menu) {
     SDL_Event event = { 0 };
     const Uint8* keystate = SDL_GetKeyboardState(NULL);
     char filename[256];
-    int now_index_button = -1;
+    int now_index_button = 0;
     char* pressed_button;
     BlockList blocks = { 0 };
     BallList balls = { 0 };
@@ -36,8 +39,8 @@ void SystemUpdate(SDL_Window* window, SDL_Renderer* ren, Menu menu) {
     int now_level = 0;
 
     LevelList levels = { .count = 2 };
-    levels.levels[0] = "level_1.txt";
-    levels.levels[1] = "level_2.txt";
+    levels.levels[0] = "C:/Users/danil/PycharmProjects/pythonProject/venv/codes/help/meow/level_1.txt";
+    levels.levels[1] = "C:/Users/danil/PycharmProjects/pythonProject/venv/codes/help/meow/level_2.txt";
 
     make_window(window, ren, menu.window);
 
@@ -101,7 +104,7 @@ void SystemUpdate(SDL_Window* window, SDL_Renderer* ren, Menu menu) {
                     if (!strcmp(pressed_button, "Start Game")) {
 
                         in_game = true;
-                        blocks = LevelInitialize("./level_1.txt");
+                        blocks = LevelInitialize(levels.levels[0]);
 
                         set_new_game(ren, &blocks, &balls, menu.window.color);
 
@@ -161,7 +164,7 @@ void SystemUpdate(SDL_Window* window, SDL_Renderer* ren, Menu menu) {
                 char* result = update_game(&balls, &blocks, &ball_released, &lives_left);
 
                 if (!strcmp(result, "game over")) {
-                    blocks = LevelInitialize("./level_1.txt");
+                    blocks = LevelInitialize(levels.levels[0]);
                     set_new_game(ren, &blocks, &balls, menu.window.color);
                     ball_released = false;
                     lives_left = LIVES_HAVE;

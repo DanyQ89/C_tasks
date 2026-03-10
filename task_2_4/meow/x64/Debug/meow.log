@@ -1,0 +1,9 @@
+﻿  interaction_w_user.c
+C:\Users\danil\PycharmProjects\pythonProject\venv\codes\help\meow\interaction_w_user.c(91,49): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\danil\PycharmProjects\pythonProject\venv\codes\help\meow\interaction_w_user.c(65,22): warning C5286: неявное преобразование из типа перечисления "<unnamed-enum-LEFT>" в тип перечисления "SDL_Scancode"; используйте явное приведение для отключения этого предупреждения
+C:\Users\danil\PycharmProjects\pythonProject\venv\codes\help\meow\interaction_w_user.c(73,22): warning C5286: неявное преобразование из типа перечисления "<unnamed-enum-LEFT>" в тип перечисления "SDL_Scancode"; используйте явное приведение для отключения этого предупреждения
+C:\Users\danil\PycharmProjects\pythonProject\venv\codes\help\meow\interaction_w_user.c(86,22): warning C5286: неявное преобразование из типа перечисления "<unnamed-enum-LEFT>" в тип перечисления "SDL_Scancode"; используйте явное приведение для отключения этого предупреждения
+C:\Users\danil\PycharmProjects\pythonProject\venv\codes\help\meow\interaction_w_user.c(98,22): warning C5286: неявное преобразование из типа перечисления "<unnamed-enum-LEFT>" в тип перечисления "SDL_Scancode"; используйте явное приведение для отключения этого предупреждения
+C:\Users\danil\PycharmProjects\pythonProject\venv\codes\help\meow\interaction_w_user.c(117,22): warning C5286: неявное преобразование из типа перечисления "<unnamed-enum-LEFT>" в тип перечисления "SDL_Scancode"; используйте явное приведение для отключения этого предупреждения
+C:\Users\danil\PycharmProjects\pythonProject\venv\codes\help\meow\interaction_w_user.c(30,10): warning C4101: filename: неиспользованная локальная переменная
+  meow.vcxproj -> C:\Users\danil\PycharmProjects\pythonProject\venv\codes\help\meow\x64\Debug\meow.exe
