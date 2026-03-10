@@ -19,7 +19,7 @@ x64/
 *.obj
 *.log
 *.tlog
-
+*.props
 # VS Code
 .vscode/
 
